@@ -1,18 +1,15 @@
-import React from 'react'
+import Nav from "./Nav"
 
 const Header = () => {
   return (
-    <header className='py-8 xl:py-12'>
-        <div className="container mx-auto flex justify-between items-center bg-slate-400">
-            <h1>My Website</h1>
-            <nav>
-                <ul className="flex space-x-4">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                </ul>
-            </nav>
-        </div>
+    <header className="py-8 xl:py-12 text-white p-6">
+      <div className="container mx-auto flex align-items items-center">
+        {/* Logo */}
+        <a href="/">
+          <img src="../../public/lick-logo.png" alt="lick-logo"/>
+        </a>
+        <Nav />   
+      </div>
     </header>
   )
 }
