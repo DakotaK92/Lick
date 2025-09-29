@@ -1,9 +1,11 @@
+"use client"
+
 import React from 'react'
 
 const History = () => {
   return (
-    <div>
-      
+    <div className='container'>
+      <h1>Our History</h1>
     </div>
   )
 }

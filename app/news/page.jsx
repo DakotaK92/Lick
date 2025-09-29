@@ -1,9 +1,11 @@
+"use client"
+
 import React from 'react'
 
 const News = () => {
   return (
-    <div>
-      
+    <div className='container'>
+      <h1>News</h1>
     </div>
   )
 }
