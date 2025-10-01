@@ -1,3 +1,4 @@
+import MobileNav from "./MobileNav"
 import Nav from "./Nav"
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
         </a>
         {/* Navigation */}
         <Nav />
-        {/* Hamburger? */}
+        <MobileNav />
         
       </div>
     </header>
