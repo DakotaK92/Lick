@@ -64,6 +64,7 @@ export default function Home() {
           <img src="/assets/images/icecreamImg2.jpg" />
         </div>
       </div>
+
       {/* Ice Cream Selector Section */}
       <div>
 
@@ -92,6 +93,7 @@ export default function Home() {
           <img src="/assets/images/icecreamPintImg1.jpg" />
         </div>
       </div>
+      
       {/* IceCream Delivery Section */}
       <div>
 
