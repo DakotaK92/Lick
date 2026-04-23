@@ -3,5 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --font-family: 'Outfit', 'sans-serif';
+  --font-family: "Outfit", sans-serif;
+  --color-cream: #fff8f1;
+  --color-ink: #111827;
+  --color-brand: #18498a;
+  --color-brand-dark: #123a6f;
+  --color-accent: #ffd566;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #ffd566;
+  color: #111827;
+}
+
+@layer components {
+  .section-kicker {
+    @apply text-sm font-bold uppercase tracking-[0.22em] text-[#b61d6a];
+  }
+
+  .section-title {
+    @apply text-4xl font-black leading-tight text-slate-950 sm:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-lg leading-8 text-slate-600;
+  }
 }
