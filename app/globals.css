@@ -8,7 +8,7 @@
   --color-ink: #111827;
   --color-brand: #18498a;
   --color-brand-dark: #123a6f;
-  --color-accent: #ffd566;
+  --color-accent: #28b940;
 }
 
 html {
@@ -27,13 +27,13 @@ a {
 }
 
 ::selection {
-  background: #ffd566;
+  background: #28b940;
   color: #111827;
 }
 
 @layer components {
   .section-kicker {
-    @apply text-sm font-bold uppercase tracking-[0.22em] text-[#b61d6a];
+    @apply text-sm font-bold uppercase tracking-[0.22em] text-[#18498a];
   }
 
   .section-title {
