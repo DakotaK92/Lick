@@ -7,21 +7,21 @@ const featuredFlavors = [
     description:
       "Birthday-cake ice cream packed with rainbow crumbs and a vanilla frosting swirl.",
     image: "/assets/images/icecreamImg1.png",
-    accent: "bg-[#ffe1ef] text-[#a01759]",
+    accent: "bg-[#18498a] text-white",
   },
   {
     name: "Strawberries & Cream",
     description:
       "A fresh strawberry churn with ribbons of sweet cream and berry pieces in every scoop.",
     image: "/assets/images/icecreamImg2.jpg",
-    accent: "bg-[#ffe7ec] text-[#a43b58]",
+    accent: "bg-[#18498a] text-white",
   },
   {
     name: "Pint Club Pick",
     description:
       "A members-only small-batch drop with rotating flavors and early access to seasonal launches.",
     image: "/assets/images/icecreamPintImg1.jpg",
-    accent: "bg-[#ede7ff] text-[#43317d]",
+    accent: "bg-[#18498a] text-white",
   },
 ];
 
@@ -30,17 +30,26 @@ const perks = [
     title: "Fresh Seasonal Drops",
     description:
       "We rotate flavors throughout the year so regulars always have something new to come back for.",
+    image: "/assets/images/seasonal-icecream.jpg",
+    href: "/news",
+    cta: "See seasonal news",
   },
   {
     title: "Rewards That Feel Worth It",
     description:
       "Birthday treats, pint previews, and member-only tasting nights turn a quick stop into a ritual.",
+    image: "/assets/images/membershipCards.jpg",
+    href: "/where-to-buy",
+    cta: "Find participating shops",
   },
   {
     title: "Made For Sharing",
     description:
       "Scoops, pints, merch, and community events all work together to make Lick feel like a neighborhood brand.",
-  },
+    image: "/assets/images/family-sharing.jpeg",
+    href: "/our-products",
+    cta: "Browse products",
+  }
 ];
 
 const highlights = [
@@ -72,7 +81,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/our-products"
-                className="inline-flex items-center justify-center rounded-full bg-[#ffd566] px-7 py-4 text-base font-bold text-slate-950 transition hover:bg-[#ffc846]"
+                className="inline-flex items-center justify-center rounded-full bg-[#28b940] px-7 py-4 text-base font-bold text-white transition hover:bg-[#62e077] hover:text-black"
               >
                 Explore the menu
               </Link>
@@ -100,7 +109,7 @@ export default function Home() {
               <div className="absolute -inset-4 rounded-[2.5rem] bg-white/12 blur-2xl" />
               <Image
                 src="/assets/lick-mascot.png"
-                alt="Lick mascot holding a cone"
+                alt="Lick mascot mouth open"
                 width={560}
                 height={640}
                 priority
@@ -134,12 +143,27 @@ export default function Home() {
           {perks.map((perk) => (
             <article
               key={perk.title}
-              className="rounded-[2rem] bg-white p-7 shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70"
+              className="flex h-full flex-col rounded-[2rem] bg-white p-7 shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70 transition-transform duration-300 hover:-translate-y-1"
             >
-              <h3 className="text-2xl font-bold text-slate-950">{perk.title}</h3>
+              <div className="overflow-hidden rounded-[1.5rem] bg-[var(--color-cream)]">
+                <Image
+                  src={perk.image}
+                  alt={perk.title}
+                  width={640}
+                  height={480}
+                  className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <h3 className="mt-5 text-2xl font-bold text-slate-950">{perk.title}</h3>
               <p className="mt-3 text-base leading-7 text-slate-600">
                 {perk.description}
               </p>
+              <Link
+                href={perk.href}
+                className="mt-6 inline-flex w-fit items-center rounded-full bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a6f]"
+              >
+                {perk.cta}
+              </Link>
             </article>
           ))}
         </div>
@@ -191,9 +215,9 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-        <div className="grid gap-8 rounded-[2.5rem] bg-[#196149] px-8 py-10 text-white lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:py-14">
+        <div className="grid gap-8 rounded-[2.5rem] bg-[#123a6f] px-8 py-10 text-white lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:py-14">
           <div className="space-y-4">
-            <p className="section-kicker text-[#c8f0e0]">Rewards</p>
+            <p className="section-kicker text-white">Rewards</p>
             <h2 className="text-4xl font-black sm:text-5xl">
               Turn regular customers into loyal regulars.
             </h2>

@@ -11,7 +11,7 @@ const outfit = Outfit({
 })
 
 export const metadata = {
-  title: "Lick - Premium Ice Cream",
+  title: "Home | Lick",
   description: "Lick is a premium ice cream brand that offers a variety of delicious and unique flavors. Our ice cream is made with high-quality ingredients and is free from artificial preservatives and additives. We are committed to sustainability and ethical sourcing, ensuring that our products are not only good for you but also good for the planet.",
   icons: {
       icon: '/favicon.ico',

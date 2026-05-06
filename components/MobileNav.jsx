@@ -29,6 +29,14 @@ const links = [
     }
 ];
 
+const isActiveLink = (pathname, path) => {
+  if (path === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === path || pathname.startsWith(`${path}/`);
+};
+
 const MobileNav = () => {
     const pathname = usePathname();
   return (
@@ -48,14 +56,17 @@ const MobileNav = () => {
         </Link>
         <nav className='mt-10 flex flex-col gap-2'>
             {links.map((link, index) => {
+                const isActive = isActiveLink(pathname, link.path);
+
                 return (
                     <Link 
                         href={link.path} 
                         key={index} 
-                        className={`rounded-2xl px-4 py-3 capitalize font-medium transition-all ${
-                          link.path === pathname
-                            ? "bg-white text-[#18498a]"
-                            : "text-white/88 hover:bg-white/10 hover:text-white"
+                        aria-current={isActive ? "page" : undefined}
+                        className={`rounded-2xl border px-4 py-3 capitalize font-semibold transition-all ${
+                          isActive
+                            ? "border-white bg-white text-[#18498a] shadow-[0_10px_30px_rgba(255,255,255,0.2)]"
+                            : "border-transparent text-white/88 hover:border-white/15 hover:bg-white/10 hover:text-white"
                         }`}
                     >
                         {link.name}

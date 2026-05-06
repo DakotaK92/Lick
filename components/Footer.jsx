@@ -28,7 +28,7 @@ const Footer = () => {
               <div>
                 <Link href="/" className="inline-flex">
                   <Image
-                    src="/assets/lick-logo-blk.png"
+                    src="/assets/lick-logo-blue.png"
                     alt="Lick logo"
                     width={170}
                     height={44}
