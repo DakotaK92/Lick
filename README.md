@@ -2,6 +2,8 @@
 
 Lick is a playful ice cream brand website built with Next.js. The project showcases featured flavors, brand storytelling, rewards messaging, and a `Where to Buy` experience with a lightweight Google Maps-style locator.
 
+![Banner](public/assets/Lick-Banner.png)
+
 ## Technologies Used
 
 - `Next.js 15` with the App Router
