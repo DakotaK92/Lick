@@ -13,6 +13,10 @@ const links = [
         path: "/our-products",
     },
     {
+        name: "store",
+        path: "/store",
+    },
+    {
         name: "our history",
         path: "/our-history",
     },

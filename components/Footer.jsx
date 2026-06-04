@@ -8,6 +8,7 @@ import React from 'react'
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Our Products", href: "/our-products" },
+  { name: "Store", href: "/store" },
   { name: "Our History", href: "/our-history" },
   { name: "News", href: "/news" },
   { name: "Where to Buy", href: "/where-to-buy" },

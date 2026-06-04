@@ -1,21 +1,26 @@
+import Image from "next/image";
+
 const milestones = [
   {
     year: "2019",
     title: "The first freezer test",
     description:
       "Lick started with a small batch experiment and a goal to make dessert feel brighter, more social, and more memorable.",
+    image: "/assets/images/icecreamIllustration.jpg",
   },
   {
     year: "2022",
     title: "Neighborhood favorite",
     description:
       "Pop-ups and local tastings helped shape the menu, the mascot, and the playful tone of the brand.",
+    image: "/assets/images/family-sharing.jpeg",
   },
   {
     year: "Now",
     title: "Growing beyond the counter",
     description:
       "The next chapter is digital: a stronger site, more structured flavor launches, and a better path from discovery to purchase.",
+    image: "/assets/images/seasonal-icecream.jpg",
   },
 ];
 
@@ -41,20 +46,35 @@ export default function HistoryPage() {
         </div>
 
         <div className="mt-12 grid gap-6">
-          {milestones.map((milestone) => (
+          {milestones.map((milestone, index) => (
             <article
               key={milestone.year}
-              className="rounded-[2rem] bg-[var(--color-cream)] p-8 shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70"
+              className="grid overflow-hidden rounded-[2rem] bg-[var(--color-cream)] shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70 lg:grid-cols-[0.95fr_1.05fr]"
             >
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#18498a]">
-                {milestone.year}
-              </p>
-              <h2 className="mt-3 text-2xl font-black text-slate-950">
-                {milestone.title}
-              </h2>
-              <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-                {milestone.description}
-              </p>
+              <div
+                className={`p-8 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}
+              >
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#18498a]">
+                  {milestone.year}
+                </p>
+                <h2 className="mt-3 text-2xl font-black text-slate-950">
+                  {milestone.title}
+                </h2>
+                <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+                  {milestone.description}
+                </p>
+              </div>
+              <div
+                className={`relative min-h-72 ${index % 2 === 0 ? "lg:order-2" : "lg:order-1"}`}
+              >
+                <Image
+                  src={milestone.image}
+                  alt={milestone.title}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 36rem, 100vw"
+                />
+              </div>
             </article>
           ))}
         </div>

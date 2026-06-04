@@ -81,7 +81,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/our-products"
-                className="inline-flex items-center justify-center rounded-full bg-[#28b940] px-7 py-4 text-base font-bold text-white transition hover:bg-[#62e077] hover:text-black"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-[#18498a] transition hover:bg-lime-600 hover:text-white"
               >
                 Explore the menu
               </Link>
