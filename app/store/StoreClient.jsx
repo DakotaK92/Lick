@@ -88,10 +88,6 @@ export default function StoreClient({ products }) {
               <h1 className="section-title">
                 Shop pints, scoop packs, and sweet little extras.
               </h1>
-              <p className="section-copy">
-                Add a few treats to your cart, then check out through Stripe.
-                Product data can come from MongoDB when your database is connected.
-              </p>
             </div>
 
             <Link
@@ -194,7 +190,7 @@ export default function StoreClient({ products }) {
             </div>
           </div>
 
-          <aside className="sticky top-28 rounded-[2rem] bg-[#18498a] p-6 text-white shadow-[0_24px_70px_rgba(17,24,39,0.14)]">
+          <aside className="sticky top-28 flex max-h-[calc(100vh-8rem)] flex-col rounded-[2rem] bg-[#18498a] p-6 text-white shadow-[0_24px_70px_rgba(17,24,39,0.14)]">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/70">
@@ -204,7 +200,7 @@ export default function StoreClient({ products }) {
               </div>
               <div className="relative">
                 <ShoppingCart className="h-7 w-7" />
-                <span className="absolute -right-3 -top-3 inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#ffd566] px-2 text-xs font-black text-slate-950">
+                <span className="absolute -right-3 -top-3 inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#ffb900] px-2 text-xs font-black text-slate-950">
                   {cartCount}
                 </span>
               </div>
@@ -216,7 +212,7 @@ export default function StoreClient({ products }) {
                 start checkout.
               </p>
             ) : (
-              <div className="mt-6 space-y-4">
+              <div className="cart-scroll mt-6 min-h-0 flex-1 space-y-4 overflow-y-auto pr-2">
                 {cartItems.map((item) => (
                   <div key={item.id} className="rounded-2xl bg-white/10 p-4">
                     <div className="flex items-start justify-between gap-3">
@@ -281,7 +277,7 @@ export default function StoreClient({ products }) {
                 <button
                   type="submit"
                   disabled={cartItems.length === 0}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffd566] px-5 py-4 font-black text-slate-950 transition hover:bg-[#ffc846] disabled:cursor-not-allowed disabled:bg-white/20 disabled:text-white/45"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#ffb900] px-5 py-4 font-black text-slate-950 transition hover:bg-[#ffb900] disabled:cursor-not-allowed disabled:bg-white/20 disabled:text-white/45"
                 >
                   <ShoppingBag className="h-5 w-5" />
                   Checkout

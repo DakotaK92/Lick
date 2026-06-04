@@ -4,11 +4,11 @@
 
 :root {
   --font-family: "Outfit", sans-serif;
-  --color-cream: #fff8f1;
+  --color-cream: #e6e6e6;
   --color-ink: #111827;
   --color-brand: #18498a;
   --color-brand-dark: #123a6f;
-  --color-accent: #28b940;
+  --color-accent: #ffb900;
 }
 
 html {
@@ -27,7 +27,7 @@ a {
 }
 
 ::selection {
-  background: #28b940;
+  background: #ffb900;
   color: #111827;
 }
 
@@ -43,4 +43,28 @@ a {
   .section-copy {
     @apply text-lg leading-8 text-slate-600;
   }
+}
+
+.cart-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 213, 102, 0.85) rgba(255, 255, 255, 0.12);
+}
+
+.cart-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cart-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.cart-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 213, 102, 0.85);
+  border: 2px solid rgba(24, 73, 138, 0.95);
+  border-radius: 999px;
+}
+
+.cart-scroll::-webkit-scrollbar-thumb:hover {
+  background: #ffd566;
 }

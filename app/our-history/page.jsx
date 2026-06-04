@@ -49,7 +49,7 @@ export default function HistoryPage() {
           {milestones.map((milestone, index) => (
             <article
               key={milestone.year}
-              className="grid overflow-hidden rounded-[2rem] bg-[var(--color-cream)] shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70 lg:grid-cols-[0.95fr_1.05fr]"
+              className="grid overflow-hidden rounded-[2rem] bg-white shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70 lg:grid-cols-[0.95fr_1.05fr]"
             >
               <div
                 className={`p-8 ${index % 2 === 0 ? "lg:order-1" : "lg:order-2"}`}

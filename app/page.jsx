@@ -81,7 +81,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/our-products"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-[#18498a] transition hover:bg-lime-600 hover:text-white"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-[#18498a] transition hover:bg-amber-400 hover:text-black"
               >
                 Explore the menu
               </Link>
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#241f22] text-white">
+      <section className="bg-[#18498a] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-16 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
           <div className="max-w-2xl space-y-4">
             <p className="section-kicker text-[#f3cbe1]">Next Step</p>
@@ -273,7 +273,7 @@ export default function Home() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
               href="/our-history"
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 font-semibold text-slate-950 transition hover:bg-[#ffe7f1]"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 font-semibold text-[#18498a] transition hover:bg-amber-400 hover:text-black"
             >
               Read the story
             </Link>

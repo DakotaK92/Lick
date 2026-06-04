@@ -65,7 +65,7 @@ export default function Products() {
                   {product.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-2xl bg-[#fff4ea] px-4 py-4 text-sm font-semibold text-slate-700"
+                      className="rounded-2xl bg-[#18498a] px-4 py-4 text-sm font-semibold text-white"
                     >
                       {item}
                     </li>

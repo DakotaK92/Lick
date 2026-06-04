@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const locations = [
@@ -8,6 +9,7 @@ const locations = [
     hours: "Mon-Sun, 12 PM - 10 PM",
     tag: "Best for cones",
     mapQuery: "120 Main Street, Nashville, TN 37201",
+    image: "/assets/images/icecreamImg2.jpg",
   },
   {
     name: "Northside Market Freezer",
@@ -16,6 +18,7 @@ const locations = [
     hours: "Daily, 10 AM - 9 PM",
     tag: "Best for pints",
     mapQuery: "418 Jefferson Street, Nashville, TN 37208",
+    image: "/assets/images/icecreamPintImg1.jpg",
   },
   {
     name: "Festival Pop-Up Cart",
@@ -24,6 +27,7 @@ const locations = [
     hours: "Fri-Sun, event schedule varies",
     tag: "Best for events",
     mapQuery: "Riverfront Park, Nashville, TN 37213",
+    image: "/assets/images/family-sharing.jpeg",
   },
 ];
 
@@ -97,31 +101,42 @@ export default function WhereToBuyPage() {
           {locations.map((location) => (
             <article
               key={location.name}
-              className="flex h-full flex-col rounded-[2rem] bg-[var(--color-cream)] p-7 shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70"
+              className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-[var(--color-cream)] shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70"
             >
-              <span className="inline-flex w-fit rounded-full bg-[#18498a]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#18498a]">
-                {location.tag}
-              </span>
-              <h3 className="mt-5 text-2xl font-bold text-slate-950">
-                {location.name}
-              </h3>
-              <p className="mt-3 text-base leading-7 text-slate-600">
-                {location.details}
-              </p>
-              <p className="mt-5 text-sm font-semibold text-slate-900">
-                {location.address}
-              </p>
-              <p className="mt-2 text-sm text-slate-600">{location.hours}</p>
-              <Link
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                  location.mapQuery
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex w-fit items-center rounded-full bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a6f]"
-              >
-                Get directions
-              </Link>
+              <div className="relative h-64">
+                <Image
+                  src={location.image}
+                  alt={location.name}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-7">
+                <span className="inline-flex w-fit rounded-full bg-[#18498a]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#18498a]">
+                  {location.tag}
+                </span>
+                <h3 className="mt-5 text-2xl font-bold text-slate-950">
+                  {location.name}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-slate-600">
+                  {location.details}
+                </p>
+                <p className="mt-3 text-sm font-semibold text-slate-900">
+                  {location.address}
+                </p>
+                <p className="mt-2 text-sm text-slate-600">{location.hours}</p>
+                <Link
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    location.mapQuery
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex w-fit items-center rounded-full bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a6f]"
+                >
+                  Get directions
+                </Link>
+              </div>
             </article>
           ))}
         </div>
