@@ -148,7 +148,10 @@ export default function StoreClient({ products }) {
                           key={product.id}
                           className="flex h-full flex-col rounded-[2rem] bg-[var(--color-cream)] p-6 shadow-[0_24px_70px_rgba(17,24,39,0.08)] ring-1 ring-slate-200/70"
                         >
-                          <div className="overflow-hidden rounded-[1.5rem] bg-white">
+                          <Link
+                            href={`/store/${product.id}`}
+                            className="overflow-hidden rounded-[1.5rem] bg-white"
+                          >
                             <Image
                               src={product.image}
                               alt={product.name}
@@ -156,30 +159,41 @@ export default function StoreClient({ products }) {
                               height={560}
                               className="h-64 w-full object-cover transition-transform duration-500 hover:scale-105"
                             />
-                          </div>
+                          </Link>
 
                           <span className="mt-5 inline-flex w-fit rounded-full bg-[#18498a]/10 px-3 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#18498a]">
                             {product.category}
                           </span>
-                          <h3 className="mt-4 text-2xl font-black text-slate-950">
+                          <Link
+                            href={`/store/${product.id}`}
+                            className="mt-4 text-2xl font-black text-slate-950 transition hover:text-[#18498a]"
+                          >
                             {product.name}
-                          </h3>
+                          </Link>
                           <p className="mt-3 text-base leading-7 text-slate-600">
                             {product.description}
                           </p>
 
-                          <div className="mt-auto flex items-center justify-between gap-4 pt-6">
+                          <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-6">
                             <p className="text-xl font-black text-slate-950">
                               {formatPrice(product.priceInCents)}
                             </p>
-                            <button
-                              type="button"
-                              onClick={() => addToCart(product.id)}
-                              className="inline-flex items-center gap-2 rounded-full bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a6f]"
-                            >
-                              <Plus className="h-4 w-4" />
-                              Add
-                            </button>
+                            <div className="flex gap-2">
+                              <Link
+                                href={`/store/${product.id}`}
+                                className="inline-flex items-center rounded-full border border-[#18498a]/20 px-5 py-3 text-sm font-semibold text-[#18498a] transition hover:bg-white"
+                              >
+                                Details
+                              </Link>
+                              <button
+                                type="button"
+                                onClick={() => addToCart(product.id)}
+                                className="inline-flex items-center gap-2 rounded-full bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#123a6f]"
+                              >
+                                <Plus className="h-4 w-4" />
+                                Add
+                              </button>
+                            </div>
                           </div>
                         </article>
                       ))}

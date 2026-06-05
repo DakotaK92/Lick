@@ -9,7 +9,7 @@ const locations = [
     hours: "Mon-Sun, 12 PM - 10 PM",
     tag: "Best for cones",
     mapQuery: "120 Main Street, Nashville, TN 37201",
-    image: "/assets/images/icecreamImg2.jpg",
+    image: "/assets/ice-cream/vanillla-strawberry.jpg",
   },
   {
     name: "Northside Market Freezer",

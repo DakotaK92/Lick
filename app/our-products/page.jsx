@@ -6,7 +6,7 @@ const products = [
     description:
       "Our front-of-house menu mixes nostalgic classics with playful signature scoops.",
     items: ["Birthday Cake", "Cookies & Cream", "Chocolate Fudge Swirl"],
-    image: "/assets/images/icecreamImg2.jpg",
+    image: "/assets/ice-cream/vanillla-strawberry.jpg",
   },
   {
     name: "Pint Freezer Lineup",

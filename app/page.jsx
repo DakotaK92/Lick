@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import HeroSlideshow from "./HeroSlideshow";
+
 const featuredFlavors = [
   {
     name: "Confetti Funfetti",
@@ -13,7 +15,7 @@ const featuredFlavors = [
     name: "Strawberries & Cream",
     description:
       "A fresh strawberry churn with ribbons of sweet cream and berry pieces in every scoop.",
-    image: "/assets/images/icecreamImg2.jpg",
+    image: "/assets/ice-cream/vanillla-strawberry.jpg",
     accent: "bg-[#18498a] text-white",
   },
   {
@@ -52,73 +54,10 @@ const perks = [
   }
 ];
 
-const highlights = [
-  "Real ingredients and playful flavor combos",
-  "Scoops, pints, merch, and loyalty perks",
-  "Built for families, date nights, and dessert runs",
-];
-
 export default function Home() {
   return (
     <main className="bg-[var(--color-cream)] text-slate-900">
-      <section className="relative overflow-hidden bg-[#18498a] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.18),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(255,201,92,0.22),_transparent_28%)]" />
-        <div className="mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-20">
-          <div className="relative z-10 space-y-8">
-            <span className="inline-flex rounded-full bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.18em] text-white/90 uppercase">
-              Small-batch joy, every scoop
-            </span>
-            <div className="space-y-5">
-              <h1 className="max-w-3xl text-5xl font-black leading-none sm:text-6xl lg:text-7xl">
-                Ice cream that makes the whole day feel lighter.
-              </h1>
-              <p className="max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-                Lick is a playful neighborhood ice cream brand with bright
-                flavors, seasonal drops, and a rewards program made for people
-                who always come back for one more bite.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/our-products"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-[#18498a] transition hover:bg-amber-400 hover:text-black"
-              >
-                Explore the menu
-              </Link>
-              <Link
-                href="/where-to-buy"
-                className="inline-flex items-center justify-center rounded-full border border-white/35 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10"
-              >
-                Find a nearby scoop
-              </Link>
-            </div>
-            <ul className="grid gap-3 pt-2 text-sm text-white/85 sm:grid-cols-3">
-              {highlights.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-2xl border border-white/14 bg-white/8 px-4 py-4 backdrop-blur-sm"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative z-10 flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-[2.5rem] bg-white/12 blur-2xl" />
-              <Image
-                src="/assets/lick-mascot.png"
-                alt="Lick mascot mouth open"
-                width={560}
-                height={640}
-                priority
-                className="relative h-auto w-[min(100%,32rem)] drop-shadow-[0_28px_60px_rgba(0,0,0,0.28)]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSlideshow />
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
@@ -260,7 +199,7 @@ export default function Home() {
       <section className="bg-[#18498a] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-16 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-20">
           <div className="max-w-2xl space-y-4">
-            <p className="section-kicker text-[#f3cbe1]">Next Step</p>
+            <p className="section-kicker text-white">Next Step</p>
             <h2 className="text-4xl font-black sm:text-5xl">
               Keep building the world around the brand.
             </h2>
