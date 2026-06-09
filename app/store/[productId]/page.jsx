@@ -14,7 +14,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const product = await getStoreProduct(params.productId);
+  const { productId } = await params;
+  const product = await getStoreProduct(productId);
 
   if (!product) {
     return {
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function StoreProductPage({ params }) {
-  const product = await getStoreProduct(params.productId);
+  const { productId } = await params;
+  const product = await getStoreProduct(productId);
 
   if (!product) {
     notFound();
@@ -42,7 +44,7 @@ export default async function StoreProductPage({ params }) {
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-10 lg:py-16">
         <Link
           href="/store"
-          className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-[#18498a] hover:text-[#18498a]"
+          className="inline-flex items-center gap-2 rounded-full border bg-[#18498a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#ffb900] hover:text-black"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to store

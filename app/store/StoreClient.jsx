@@ -207,7 +207,7 @@ export default function StoreClient({ products }) {
           <aside className="sticky top-28 flex max-h-[calc(100vh-8rem)] flex-col rounded-[2rem] bg-[#18498a] p-6 text-white shadow-[0_24px_70px_rgba(17,24,39,0.14)]">
             <div className="flex items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/70">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-white">
                   Cart
                 </p>
                 <h2 className="mt-1 text-2xl font-black">Your treats</h2>
